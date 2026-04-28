@@ -1,6 +1,9 @@
 import random
 import sys
 import pygame
+import os
+
+print(os.getcwd())
 
 pygame.init()
 
@@ -21,9 +24,9 @@ ACCENT_DARK = (93, 52, 128)
 GOOD = (57, 162, 97)
 BAD = (195, 76, 76)
 
-FONT = pygame.font.SysFont("Courier New", 22)
-FONT_SMALL = pygame.font.SysFont("Courier New", 18)
-FONT_BIG = pygame.font.SysFont("Courier New", 34, bold=True)
+FONT = pygame.font.Font("/Users/atika1337/Desktop/игра/assets/minecraft.ttf", 16)
+FONT_SMALL = pygame.font.Font("/Users/atika1337/Desktop/игра/assets/minecraft.ttf", 16)
+FONT_BIG = pygame.font.Font("/Users/atika1337/Desktop/игра/assets/minecraft.ttf", 22)
 
 SHAPES = ["Круг", "Квадрат", "Сердце"]
 COLORS = [
@@ -587,7 +590,7 @@ def main():
         pygame.draw.rect(SCREEN, (243, 234, 250), preview_box, border_radius=14)
         pygame.draw.rect(SCREEN, (216, 197, 233), preview_box, 2, border_radius=14)
         draw_cake(SCREEN, selection["shape"], preview_color, selection["detail"], (794, 372, 136, 122), layers=selection["layers"])
-        SCREEN.blit(FONT_SMALL.render("Предпросмотр", True, TEXT), (812, 358))
+        SCREEN.blit(FONT_SMALL.render("Предпросмотр", True, TEXT), (790, 358))
 
         SCREEN.blit(FONT.render(f"Очки: {score}", True, TEXT), (352, 506))
         SCREEN.blit(FONT.render(f"Жизни: {lives}", True, TEXT), (500, 506))
